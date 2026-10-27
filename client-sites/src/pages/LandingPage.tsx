@@ -1,10 +1,12 @@
 import "./LandingPage.css";
+import NordveksModel from "./NordveksModel";
+
 const demos = [
   {
     number: "01",
     name: "FORM.",
     category: "BARBERSHOP",
-    description: "A modern, confident look for a barbershop.",
+    description: "A sharp, modern identity for a contemporary barbershop.",
     href: "/demo/barber",
     className: "demo-card--barber",
   },
@@ -12,11 +14,20 @@ const demos = [
     number: "02",
     name: "LINDEN",
     category: "RESTAURANT",
-    description: "A warm, editorial look for a neighbourhood restaurant.",
+    description: "A warm, distinctive online presence for a local restaurant.",
     href: "/demo/restaurant",
     className: "demo-card--restaurant",
   },
+  {
+    number: "03",
+    name: "STILLFORM",
+    category: "PILATES & MOVEMENT",
+    description: "A calm, confident digital experience for a movement studio.",
+    href: "/demo/studio",
+    className: "demo-card--studio",
+  },
 ];
+
 
 const process = [
   {
@@ -47,13 +58,16 @@ function LandingPage() {
           nordveks<span>.</span>
         </a>
 
+
         <nav className="site-nav" aria-label="Main navigation">
-          <a href="#work">Selected work</a>
-          <a href="#process">How it works</a>
-          <a className="nav-contact" href="#contact">
+        <a href="#work">Selected work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">How it works</a>
+        <a className="nav-contact" href="#contact">
             Let's talk <span aria-hidden="true">↗</span>
-          </a>
+        </a>
         </nav>
+
       </header>
 
       <section className="hero" id="home">
@@ -68,10 +82,12 @@ function LandingPage() {
             <span>Better online.</span>
           </h1>
 
-          <p className="hero-description">
-            Thoughtful, modern websites for local businesses.
-            Designed around what makes your business yours.
-          </p>
+
+            <p className="hero-description">
+            Modern websites for small businesses. Thoughtful design, clear pricing,
+            and a direct line to the person building your site.
+            </p>
+
 
           <div className="hero-actions">
             <a className="button button-primary" href="#work">
@@ -82,33 +98,16 @@ function LandingPage() {
             </a>
           </div>
 
-          <div className="hero-note">
-            <span className="status-dot" />
-            Personal service. No complicated platforms.
-          </div>
         </div>
 
-        <div className="hero-art" aria-label="Abstract website design illustration">
-          <div className="art-topline">
-            <span>NORDVEKS STUDIO</span>
-            <span>DESIGN / 001</span>
-          </div>
 
-          <div className="art-orbit art-orbit-one" />
-          <div className="art-orbit art-orbit-two" />
 
-          <div className="art-center">
-            <span className="art-kicker">A BETTER FIRST IMPRESSION</span>
-            <div className="art-symbol">n<span>.</span></div>
-            <span className="art-caption">Made for your business.</span>
-          </div>
-
-          <div className="art-bottomline">
-            <span>STRATEGY</span>
-            <span>DESIGN</span>
-            <span>DEVELOPMENT</span>
-          </div>
+        <div className="hero-art hero-art--3d">
+        <div className="model-grid" />
+        <NordveksModel />
         </div>
+
+
 
         <div className="hero-index">
           <span>01 / 03</span>
@@ -117,7 +116,9 @@ function LandingPage() {
       </section>
 
       <section className="intro-section">
-        <p className="eyebrow">SMALL BUSINESS, BIG POTENTIAL</p>
+        <p className="eyebrow">
+            WEB DESIGN & DEVELOPMENT · SWEDEN
+        </p>
         <div className="intro-content">
           <h2>
             A website should do more than exist.
@@ -130,6 +131,40 @@ function LandingPage() {
           </p>
         </div>
       </section>
+
+            
+        <section className="pricing-section" id="pricing">
+        <div className="pricing-heading">
+            <p className="eyebrow">STRAIGHTFORWARD PRICING</p>
+            <h2>
+            A better website.
+            <br />
+            <span>Without the big-agency price.</span>
+            </h2>
+            <p>
+            Start with what your business actually needs. No unnecessary features,
+            complicated platforms, or unclear costs.
+            </p>
+        </div>
+
+        <div className="pricing-card">
+            <div>
+            <p className="eyebrow">THE STARTER WEBSITE</p>
+            <h3>Everything essential, done properly.</h3>
+            <p>
+                A custom-designed, mobile-friendly one-page website with your
+                business information, services, contact details, and a clear way
+                for customers to reach you. Scope agreed before work begins.
+            </p>
+            </div>
+
+            <div className="pricing-value">
+            <strong>1 490 kr</strong>
+            <span>Starting price · one-time build fee</span>
+            </div>
+        </div>
+        </section>
+
 
       <section className="work-section" id="work">
         <div className="section-heading">

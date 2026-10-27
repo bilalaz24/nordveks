@@ -1,5 +1,21 @@
 
-export type SectionKey = "intro" | "offerings" | "visit";
+export type SectionKey =
+  | "intro"
+  | "offerings"
+  | "gallery"
+  | "testimonials"
+  | "visit";
+
+export type GalleryImage = {
+  src: string;
+  alt: string;
+};
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  detail?: string;
+};
 
 export type Offering = {
   name: string;
@@ -30,16 +46,19 @@ export type CustomerConfig = {
     address: string;
   };
   hours: { days: string; time: string }[];
-  theme: {
+    theme: {
     background: string;
     surface: string;
+    surfaceText: string; // Add this line
     text: string;
     muted: string;
     primary: string;
     primaryText: string;
     border: string;
-  };
+    };
   sections: SectionKey[];
+  gallery?: GalleryImage[];
+  testimonials?: Testimonial[];
 };
 
 export const customers: Record<string, CustomerConfig> = {
@@ -90,21 +109,57 @@ export const customers: Record<string, CustomerConfig> = {
       { days: "Sunday", time: "Closed" },
     ],
     theme: {
-      background: "#171a17",
-      surface: "#e9e6dc",
-      text: "#f5f1e9",
-      muted: "#b7b9b1",
-      primary: "#c9e0a5",
-      primaryText: "#20251e",
-      border: "#ffffff25",
+    background: "#191b18",
+    surface: "#e9e5da",
+    surfaceText: "#292c25",
+    text: "#f3f0e8",
+    muted: "#b8b9b0",
+    primary: "#c4d2a5",
+    primaryText: "#24291f",
+    border: "#ffffff25",
     },
-    sections: ["intro", "offerings", "visit"],
+    sections: ["intro", "offerings", "visit", "gallery", "testimonials"],
+        
+    gallery: [
+    {
+        src: "/images/barber-interior.png",
+        alt: "Interior of the barbershop",
+    },
+    {
+        src: "/images/barber-chair.png",
+        alt: "Barber chair and workstation",
+    },
+    {
+        src: "/images/barber-work.png",
+        alt: "A finished haircut",
+    },
+    ],
+    testimonials: [
+    {
+        quote:
+        "Exactly the kind of haircut I wanted. Clean details, great finish, and no unnecessary fuss.",
+        name: "Demo customer 01",
+        detail: "Fictional review · Design preview",
+    },
+    {
+        quote:
+        "A relaxed experience from start to finish. The attention to detail makes all the difference.",
+        name: "Demo customer 02",
+        detail: "Fictional review · Design preview",
+    },
+    {
+        quote:
+        "Sharp cut, thoughtful service, and a style that actually works for me.",
+        name: "Demo customer 03",
+        detail: "Fictional review · Design preview",
+    },
+    ],
   },
 
   restaurant: {
     slug: "restaurant",
     name: "LINDEN",
-    category: "KITCHEN & WINE",
+    category: "KITCHEN & COCKTAILS",
     location: "GÖTEBORG",
     tagline: "Good food, good company.",
     heroTitle: "Gather around.",
@@ -146,16 +201,88 @@ export const customers: Record<string, CustomerConfig> = {
       { days: "Mon–Thu", time: "11:00–21:00" },
       { days: "Fri–Sat", time: "11:00–23:00" },
       { days: "Sunday", time: "12:00–17:00" },
-    ],
+    ],  
     theme: {
-      background: "#f5f0e7",
-      surface: "#e6ddcc",
-      text: "#292d24",
-      muted: "#6f7065",
-      primary: "#8b4b35",
-      primaryText: "#ffffff",
-      border: "#292d2426",
+    background: "#f5f1e8",
+    surface: "#e9e1d3",
+    surfaceText: "#292c25",
+    text: "#292c25",
+    muted: "#706e63",
+    primary: "#92543e",
+    primaryText: "#ffffff",
+    border: "#292c2526",
     },
     sections: ["intro", "offerings", "visit"],
   },
+
+    studio: {
+    slug: "studio",
+    name: "STILLFORM",
+    category: "STRENGTH & CONDITIONING",
+    location: "GÖTEBORG",
+    tagline: "Built through consistency.",
+    heroTitle: "Stronger",
+    heroEmphasis: "every day.",
+    heroDescription:
+        "Purposeful training, expert coaching and a space built to help you progress. From strength fundamentals to challenging sessions, every workout has a reason.",
+
+    heroImage:
+        "https://images.unsplash.com/photo-1778828450059-f39d5bbb01af?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+
+    aboutTitle: "Train with",
+    aboutEmphasis: "purpose.",
+    aboutDescription:
+        "STILLFORM brings together thoughtful programming, quality equipment and focused coaching. Whether you're building your foundations or pushing toward new goals, train at your own pace and make every session count.",
+
+    offeringsTitle: "Find your",
+    offeringsEmphasis: "strength.",
+    offeringsLabel: "TRAINING",
+
+    offerings: [
+        {
+        name: "Strength Training",
+        description:
+            "Build strength and confidence with structured, progressive training.",
+        price: "180 kr",
+        },
+        {
+        name: "Small Group Training",
+        description:
+            "Coach-led sessions that combine focused programming with group energy.",
+        price: "250 kr",
+        },
+        {
+        name: "Personal Training",
+        description:
+            "Individual coaching tailored to your experience, technique and goals.",
+        price: "650 kr",
+        },
+    ],
+
+    contact: {
+        email: "hello@stillform.example",
+        phone: "+46 31 000 000",
+        address: "Example Street 8, Göteborg",
+    },
+
+    hours: [
+        { days: "Mon–Fri", time: "06:00–21:00" },
+        { days: "Saturday", time: "08:00–17:00" },
+        { days: "Sunday", time: "09:00–15:00" },
+    ],
+
+    theme: {
+        background: "#17191b",
+        surface: "#e9e7e1",
+        surfaceText: "#202326",
+        text: "#f3f1eb",
+        muted: "#a7adb0",
+        primary: "#a8bac4",
+        primaryText: "#17191b",
+        border: "#ffffff20",
+    },
+
+    sections: ["intro", "offerings", "visit"],
+    },
+
 };

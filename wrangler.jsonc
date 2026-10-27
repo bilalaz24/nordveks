@@ -17,5 +17,12 @@
       "pattern": "*.nordveks.se/*",
       "zone_name": "nordveks.se"
     }
-  ]
+  ],
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "persist": true
+    }
+  },
 }

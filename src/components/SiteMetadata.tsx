@@ -1,13 +1,15 @@
+
 import { useEffect } from "react";
-import { getSiteMetadata } from "../config/siteMetadata";
+import type { SiteMetadata as SiteMetadataType } from "../config/siteMetadata";
 
-export default function SiteMetadata() {
+type Props = {
+  metadata: SiteMetadataType;
+};
+
+export default function SiteMetadata({ metadata }: Props) {
   useEffect(() => {
-    const site = getSiteMetadata();
+    document.title = metadata.title;
 
-    document.title = site.title;
-
-    // Update the favicon without adding duplicate icon tags.
     let favicon = document.querySelector<HTMLLinkElement>(
       'link[rel="icon"]',
     );
@@ -18,9 +20,8 @@ export default function SiteMetadata() {
       document.head.appendChild(favicon);
     }
 
-    favicon.href = site.faviconUrl;
+    favicon.href = metadata.faviconUrl;
 
-    // Update the description too.
     let description = document.querySelector<HTMLMetaElement>(
       'meta[name="description"]',
     );
@@ -31,8 +32,8 @@ export default function SiteMetadata() {
       document.head.appendChild(description);
     }
 
-    description.content = site.description;
-  }, []);
+    description.content = metadata.description;
+  }, [metadata]);
 
   return null;
 }

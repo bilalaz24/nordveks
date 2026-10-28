@@ -25,6 +25,7 @@ export type Offering = {
 
 export type CustomerConfig = {
   slug: string;
+  faviconUrl: string;
   name: string;
   category: string;
   location: string;
@@ -64,6 +65,7 @@ export type CustomerConfig = {
 export const customers: Record<string, CustomerConfig> = {
   rook: {
     slug: "barber",
+    faviconUrl: "/favicons/rook.svg",
     name: "ROOK.",
     category: "BARBERSHOP",
     location: "GÖTEBORG",
@@ -158,6 +160,7 @@ export const customers: Record<string, CustomerConfig> = {
 
   linden: {
     slug: "restaurant",
+    faviconUrl: "/favicons/linden.svg",
     name: "LINDEN",
     category: "KITCHEN & COCKTAILS",
     location: "GÖTEBORG",
@@ -217,6 +220,7 @@ export const customers: Record<string, CustomerConfig> = {
 
   stillform: {
     slug: "studio",
+    faviconUrl: "/favicons/stillform.svg",
     name: "STILLFORM",
     category: "STRENGTH & CONDITIONING",
     location: "GÖTEBORG",

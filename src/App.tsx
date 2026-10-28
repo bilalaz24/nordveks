@@ -4,6 +4,7 @@ import BusinessWebsite from "./BusinessWebsite";
 import { resolveCustomer, ROOT_DOMAIN } from "./resolveCustomer";
 import NotFoundPage from "./pages/NotFoundPage";
 import SiteMetadata from "./components/SiteMetadata";
+import { createSiteMetadata } from "./config/siteMetadata";
 
 function App() {
   const hostname = window.location.hostname.toLowerCase();
@@ -15,7 +16,7 @@ function App() {
   const isMainDomain =
     hostname === ROOT_DOMAIN || hostname === `www.${ROOT_DOMAIN}`;
 
-  // Your service landing page
+  // Official Nordveks landing page.
   if (
     (isLocal && pathname === "/") ||
     (isMainDomain && pathname === "/")
@@ -23,15 +24,17 @@ function App() {
     return <LandingPage />;
   }
 
-  // Your business demo websites and future customer websites
+  // Resolve a demo or customer website from its hostname/path.
   const customer = resolveCustomer(hostname, pathname);
 
   if (customer) {
+    const metadata = createSiteMetadata(customer);
+
     return (
-      <div>
+      <>
+        <SiteMetadata metadata={metadata} />
         <BusinessWebsite config={customer} />
-        <SiteMetadata />
-      </div>
+      </>
     );
   }
 

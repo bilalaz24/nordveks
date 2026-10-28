@@ -1,5 +1,5 @@
 
-import { customers, type CustomerConfig } from "../data/customers";
+import type { CustomerConfig } from "../data/customers";
 
 export type SiteMetadata = {
   siteName: string;
@@ -16,70 +16,36 @@ const nordveks: SiteMetadata = {
   faviconUrl: "/favicon.ico",
 };
 
-const customerMetadata = (
+/**
+ * Convert a customer's saved configuration into browser metadata.
+ */
+export function createSiteMetadata(
   customer: CustomerConfig,
-  faviconUrl: string,
-): SiteMetadata => ({
-  siteName: customer.name,
-  title: `${customer.name} | ${customer.category
-    .toLowerCase()
-    .replace(/\b\w/g, (char) => char.toUpperCase())} i ${customer.location}`,
-  description: customer.heroDescription,
-  faviconUrl,
-});
+): SiteMetadata {
+  return {
+    siteName: customer.name,
+    title: `${customer.name} | ${customer.category} i ${customer.location}`,
+    description: customer.heroDescription,
+    faviconUrl: customer.faviconUrl || "/favicon.ico",
+  };
+}
 
-const faviconByCustomer: Record<string, string> = {
-  rook: "/favicons/rook.svg",
-  linden: "/favicons/linden.svg",
-  stillform: "/favicons/stillform.svg",
-};
+/**
+ * Use this only to identify the official Nordveks website.
+ * Customer resolution should happen through your database,
+ * not a hardcoded list of customer names or subdomains.
+ */
+export function isNordveksDomain(hostname: string): boolean {
+  const host = hostname.toLowerCase();
 
-export const clientSites: Record<string, SiteMetadata> = {
-  rook: customerMetadata(customers.rook, faviconByCustomer.rook),
-  linden: customerMetadata(customers.linden, faviconByCustomer.linden),
-  stillform: customerMetadata(
-    customers.stillform,
-    faviconByCustomer.stillform,
-  ),
-};
+  return (
+    host === "nordveks.se" ||
+    host === "www.nordveks.se" ||
+    host === "localhost" ||
+    host === "127.0.0.1"
+  );
+}
 
-export function getSiteMetadata(): SiteMetadata {
-  const hostname = window.location.hostname.toLowerCase();
-  const pathname = window.location.pathname.toLowerCase();
-
-  // Official Nordveks website.
-  if (
-    hostname === "nordveks.se" ||
-    hostname === "www.nordveks.se" ||
-    hostname === "localhost" ||
-    hostname === "127.0.0.1"
-  ) {
-    const demoMatch = pathname.match(
-      /^\/demo\/(barber|restaurant|studio)(?:\/|$)/,
-    );
-
-    if (demoMatch) {
-      const demoKey = {
-        barber: "rook",
-        restaurant: "linden",
-        studio: "stillform",
-      }[demoMatch[1]];
-
-      if (demoKey) {
-        return clientSites[demoKey];
-      }
-    }
-
-    return nordveks;
-  }
-
-  // Match a client's subdomain, e.g. rook.nordveks.se.
-  const subdomain = hostname.split(".")[0];
-
-  if (clientSites[subdomain]) {
-    return clientSites[subdomain];
-  }
-
-  // Fallback for unknown domains.
+export function getNordveksMetadata(): SiteMetadata {
   return nordveks;
 }

@@ -6,11 +6,11 @@ import "./LandingPage.css";
 
 const demos = [
   {
-    name: "FORM.",
+    name: "ROOK.",
     type: "Barberare",
     description:
       "En modern och stilren hemsida för en barbershop, med tjänster och tydlig kontakt.",
-    href: "/demo/barber",
+    href: "https://rook.nordveks.se",
     className: "demo-card--barber",
   },
   {
@@ -18,7 +18,7 @@ const demos = [
     type: "Restaurang",
     description:
       "En varm och inbjudande hemsida för en lokal restaurang som vill locka fler gäster.",
-    href: "/demo/restaurant",
+    href: "https://linden.nordveks.se",
     className: "demo-card--restaurant",
   },
   {
@@ -26,7 +26,7 @@ const demos = [
     type: "Pilates- och träningsstudio",
     description:
       "En lugn och överskådlig hemsida för en studio som vill nå nya kunder.",
-    href: "/demo/studio",
+    href: "https://stillform.nordveks.se",
     className: "demo-card--studio",
   },
 ];

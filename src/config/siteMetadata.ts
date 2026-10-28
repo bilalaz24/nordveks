@@ -1,3 +1,6 @@
+
+import { customers, type CustomerConfig } from "../data/customers";
+
 export type SiteMetadata = {
   siteName: string;
   title: string;
@@ -7,50 +10,76 @@ export type SiteMetadata = {
 
 const nordveks: SiteMetadata = {
   siteName: "Nordveks",
-  title: "Nordveks — Websites for Small Businesses",
-  description: "Thoughtfully designed websites for small businesses.",
+  title: "Nordveks — Hemsidor för företag",
+  description:
+    "Professionella hemsidor för småföretag. Genomtänkt design, fast pris och enkel lansering.",
   faviconUrl: "/favicon.ico",
 };
 
+const customerMetadata = (
+  customer: CustomerConfig,
+  faviconUrl: string,
+): SiteMetadata => ({
+  siteName: customer.name,
+  title: `${customer.name} | ${customer.category
+    .toLowerCase()
+    .replace(/\b\w/g, (char) => char.toUpperCase())} i ${customer.location}`,
+  description: customer.heroDescription,
+  faviconUrl,
+});
+
+const faviconByCustomer: Record<string, string> = {
+  rook: "/favicons/rook.svg",
+  linden: "/favicons/linden.svg",
+  stillform: "/favicons/stillform.svg",
+};
+
 export const clientSites: Record<string, SiteMetadata> = {
-  barber: {
-    siteName: "FORM.",
-    title: "FORM. Barbershop | Book Your Appointment",
-    description: "Modern barbering with personal service.",
-    faviconUrl: "/favicons/form.svg",
-  },
-
-  restaurant: {
-    siteName: "Linden",
-    title: "Linden Restaurant | Food & Reservations",
-    description: "Discover Linden Restaurant and make a reservation.",
-    faviconUrl: "/favicons/linden.svg",
-  },
-
-  studio: {
-    siteName: "Stillform",
-    title: "Stillform | Pilates & Movement",
-    description: "Find your balance at Stillform.",
-    faviconUrl: "/favicons/stillform.svg",
-  },
+  rook: customerMetadata(customers.rook, faviconByCustomer.rook),
+  linden: customerMetadata(customers.linden, faviconByCustomer.linden),
+  stillform: customerMetadata(
+    customers.stillform,
+    faviconByCustomer.stillform,
+  ),
 };
 
 export function getSiteMetadata(): SiteMetadata {
   const hostname = window.location.hostname.toLowerCase();
   const pathname = window.location.pathname.toLowerCase();
 
-  // Match client subdomains.
-  if (hostname.startsWith("form.")) return clientSites.barber;
-  if (hostname.startsWith("linden.")) return clientSites.restaurant;
-  if (hostname.startsWith("stillform.")) return clientSites.studio;
+  // Official Nordveks website.
+  if (
+    hostname === "nordveks.se" ||
+    hostname === "www.nordveks.se" ||
+    hostname === "localhost" ||
+    hostname === "127.0.0.1"
+  ) {
+    const demoMatch = pathname.match(
+      /^\/demo\/(barber|restaurant|studio)(?:\/|$)/,
+    );
 
-  // Match demo routes on the Nordveks domain.
-  if (pathname.startsWith("/demo/barber")) return clientSites.barber;
-  if (pathname.startsWith("/demo/restaurant")) {
-    return clientSites.restaurant;
+    if (demoMatch) {
+      const demoKey = {
+        barber: "rook",
+        restaurant: "linden",
+        studio: "stillform",
+      }[demoMatch[1]];
+
+      if (demoKey) {
+        return clientSites[demoKey];
+      }
+    }
+
+    return nordveks;
   }
-  if (pathname.startsWith("/demo/studio")) return clientSites.studio;
 
-  // The official Nordveks site remains branded as Nordveks.
+  // Match a client's subdomain, e.g. rook.nordveks.se.
+  const subdomain = hostname.split(".")[0];
+
+  if (clientSites[subdomain]) {
+    return clientSites[subdomain];
+  }
+
+  // Fallback for unknown domains.
   return nordveks;
 }

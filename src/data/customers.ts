@@ -62,9 +62,9 @@ export type CustomerConfig = {
 };
 
 export const customers: Record<string, CustomerConfig> = {
-  barber: {
+  rook: {
     slug: "barber",
-    name: "FORM.",
+    name: "ROOK.",
     category: "BARBERSHOP",
     location: "GÖTEBORG",
     tagline: "Grooming, refined.",
@@ -156,7 +156,7 @@ export const customers: Record<string, CustomerConfig> = {
     ],
   },
 
-  restaurant: {
+  linden: {
     slug: "restaurant",
     name: "LINDEN",
     category: "KITCHEN & COCKTAILS",
@@ -215,7 +215,7 @@ export const customers: Record<string, CustomerConfig> = {
     sections: ["intro", "offerings", "visit"],
   },
 
-    studio: {
+  stillform: {
     slug: "studio",
     name: "STILLFORM",
     category: "STRENGTH & CONDITIONING",
@@ -283,6 +283,5 @@ export const customers: Record<string, CustomerConfig> = {
     },
 
     sections: ["intro", "offerings", "visit"],
-    },
-
+  },
 };

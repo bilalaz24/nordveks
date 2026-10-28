@@ -13,7 +13,7 @@ const nordveks: SiteMetadata = {
   title: "Nordveks — Hemsidor för företag",
   description:
     "Professionella hemsidor för småföretag. Genomtänkt design, fast pris och enkel lansering.",
-  faviconUrl: "/favicon.ico",
+  faviconUrl: "/favicon.svg",
 };
 
 /**
@@ -26,7 +26,7 @@ export function createSiteMetadata(
     siteName: customer.name,
     title: `${customer.name} | ${customer.category} i ${customer.location}`,
     description: customer.heroDescription,
-    faviconUrl: customer.faviconUrl || "/favicon.ico",
+    faviconUrl: customer.faviconUrl || "/favicon.svg",
   };
 }
 

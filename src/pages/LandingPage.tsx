@@ -1,331 +1,287 @@
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
+import { CONTACT_EMAIL, CONTACT_HREF } from "../contact";
+import "../styles/site.css";
 import "./LandingPage.css";
-import NordveksModel from "./NordveksModel";
 
 const demos = [
   {
-    number: "01",
     name: "FORM.",
-    category: "BARBERSHOP",
-    description: "A sharp, modern identity for a contemporary barbershop.",
+    type: "Barberare",
+    description:
+      "En modern och stilren hemsida för en barbershop, med tjänster och tydlig kontakt.",
     href: "/demo/barber",
     className: "demo-card--barber",
   },
   {
-    number: "02",
-    name: "LINDEN",
-    category: "RESTAURANT",
-    description: "A warm, distinctive online presence for a local restaurant.",
+    name: "Linden",
+    type: "Restaurang",
+    description:
+      "En varm och inbjudande hemsida för en lokal restaurang som vill locka fler gäster.",
     href: "/demo/restaurant",
     className: "demo-card--restaurant",
   },
   {
-    number: "03",
     name: "STILLFORM",
-    category: "PILATES & MOVEMENT",
-    description: "A calm, confident digital experience for a movement studio.",
+    type: "Pilates- och träningsstudio",
+    description:
+      "En lugn och överskådlig hemsida för en studio som vill nå nya kunder.",
     href: "/demo/studio",
     className: "demo-card--studio",
   },
 ];
 
+const steps = [
+  {
+    title: "Du berättar",
+    text: "Du beskriver ditt företag, dina tjänster och vilken känsla du vill att hemsidan ska förmedla. Vi tar det vidare därifrån.",
+  },
+  {
+    title: "Vi bygger",
+    text: "Vi tar fram din hemsida med dina texter, dina tjänster och din stil. Du slipper allt tekniskt.",
+  },
+  {
+    title: "Du är live",
+    text: "Din hemsida publiceras direkt på din egen adress, till exempel dittforetag.nordveks.se.",
+  },
+];
 
-const process = [
+const included = [
   {
-    number: "01",
-    title: "We talk",
-    description:
-      "We discuss your business, what you need, and what a website should accomplish for you.",
+    title: "Design efter ditt företag",
+    text: "Din hemsida utformas utifrån dina kunder och din stil, inte en färdig mall.",
   },
   {
-    number: "02",
-    title: "I design",
-    description:
-      "I build a website around your business, with your content, services, and visual identity.",
+    title: "Allt kunderna behöver veta",
+    text: "Dina tjänster, kontaktuppgifter och ett enkelt sätt för kunder att höra av sig.",
   },
   {
-    number: "03",
-    title: "We launch",
-    description:
-      "Once you approve the result, we arrange the domain and publishing details and get your website online.",
+    title: "Fungerar överallt",
+    text: "Sidan ser bra ut och är lätt att använda på både mobil, surfplatta och dator.",
+  },
+  {
+    title: "Din egen adress",
+    text: "Hemsidan går live på dittforetag.nordveks.se och du kan börja dela länken direkt.",
+  },
+];
+
+const compareRows = [
+  {
+    label: "Pris",
+    us: "Från 1 290 kr",
+    agency: "Ofta flera tusen till tiotusentals kronor",
+    diy: "Billigt i pengar, dyrt i tid",
+  },
+  {
+    label: "Tid till live",
+    us: "Efter att detaljerna är på plats",
+    agency: "Ofta flera veckor",
+    diy: "Ofta flera dagar",
+  },
+  {
+    label: "Din insats",
+    us: "Du beskriver vad du behöver",
+    agency: "Flera möten och omgångar",
+    diy: "Du gör allt själv",
+  },
+  {
+    label: "Resultat",
+    us: "Professionell design för just ditt företag",
+    agency: "Professionell design",
+    diy: "Beror på din erfarenhet",
   },
 ];
 
 function LandingPage() {
   return (
-    <main className="landing-page">
-      <header className="site-header">
-        <a className="wordmark" href="#home" aria-label="Nordveks home">
-          nordveks<span>.</span>
-        </a>
+    <main className="site">
+      <SiteHeader />
 
-
-        <nav className="site-nav" aria-label="Main navigation">
-        <a href="#work">Selected work</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#process">How it works</a>
-        <a className="nav-contact" href="#contact">
-            Let's talk <span aria-hidden="true">↗</span>
-        </a>
-        </nav>
-
-      </header>
-
-      <section className="hero" id="home">
-        <div className="hero-copy">
-          <p className="eyebrow">
-            INDEPENDENT WEB DESIGN · GOTHENBURG
+      <section className="hero">
+        <div className="container">
+          <h1>En professionell hemsida. Redo att lansera.</h1>
+          <p className="hero-text">
+            Berätta om ditt företag så bygger vi din hemsida och sätter den live
+            på din adress. Fast pris, inget krångel och inget stort
+            projekt.
           </p>
-
-          <h1>
-            Your business.
-            <br />
-            <span>Better online.</span>
-          </h1>
-
-
-            <p className="hero-description">
-            Modern websites for small businesses. Thoughtful design, clear pricing,
-            and a direct line to the person building your site.
-            </p>
-
 
           <div className="hero-actions">
-            <a className="button button-primary" href="#work">
-              Explore the work <span aria-hidden="true">↘</span>
+            <a className="button button-primary" href={CONTACT_HREF}>
+              Kom igång
             </a>
-            <a className="text-link" href="#contact">
-              Have a project in mind?
+            <a className="button button-secondary" href="#exempel">
+              Se exempel
             </a>
           </div>
 
-        </div>
-
-
-
-        <div className="hero-art hero-art--3d">
-        <div className="model-grid" />
-        <NordveksModel />
-        </div>
-
-
-
-        <div className="hero-index">
-          <span>01 / 03</span>
-          <span>DESIGNED WITH INTENTION</span>
+          <ul className="hero-facts">
+            <li>Från 1 290 kr</li>
+            <li>Vi sköter allt tekniskt</li>
+            <li>Ingen förpliktelse</li>
+          </ul>
         </div>
       </section>
 
-      <section className="intro-section">
-        <p className="eyebrow">
-            WEB DESIGN & DEVELOPMENT · SWEDEN
-        </p>
-        <div className="intro-content">
-          <h2>
-            A website should do more than exist.
-            <span> It should make people take your business seriously.</span>
-          </h2>
-          <p>
-            Your website is often where a potential customer forms their first
-            impression. I create clear, considered websites that help people
-            understand what you do, explore what you offer, and get in touch.
-          </p>
-        </div>
-      </section>
-
-            
-        <section className="pricing-section" id="pricing">
-        <div className="pricing-heading">
-            <p className="eyebrow">STRAIGHTFORWARD PRICING</p>
-            <h2>
-            A better website.
-            <br />
-            <span>Without the big-agency price.</span>
-            </h2>
+      <section className="section section--tint">
+        <div className="container">
+          <div className="section-head">
+            <h2>Så enkelt är det</h2>
             <p>
-            Start with what your business actually needs. No unnecessary features,
-            complicated platforms, or unclear costs.
+              Inget projekt att planera. Du berättar om ditt företag, resten
+              sköter vi.
             </p>
-        </div>
-
-        <div className="pricing-card">
-            <div>
-            <p className="eyebrow">THE STARTER WEBSITE</p>
-            <h3>Everything essential, done properly.</h3>
-            <p>
-                A custom-designed, mobile-friendly one-page website with your
-                business information, services, contact details, and a clear way
-                for customers to reach you. Scope agreed before work begins.
-            </p>
-            </div>
-
-            <div className="pricing-value">
-            <strong>1 490 kr</strong>
-            <span>Starting price · one-time build fee</span>
-            </div>
-        </div>
-        </section>
-
-
-      <section className="work-section" id="work">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">A LOOK AT THE POSSIBILITIES</p>
-            <h2>Selected concepts<span>.</span></h2>
           </div>
-          <p className="section-aside">
-            Different businesses.
-            <br />
-            Different personalities.
-            <br />
-            One thoughtful approach.
-          </p>
-        </div>
 
-        <div className="demo-grid">
-          {demos.map((demo) => (
-            <a
-              className={`demo-card ${demo.className}`}
-              href={demo.href}
-              key={demo.number}
-            >
-              <div className="demo-preview">
-                <div className="preview-window">
-                  <div className="preview-bar">
+          <ol className="steps">
+            {steps.map((step, index) => (
+              <li className="step" key={step.title}>
+                <span className="step-number">Steg {index + 1}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="section" id="exempel">
+        <div className="container">
+          <div className="section-head">
+            <h2>Så kan din hemsida se ut</h2>
+            <p>
+              Här är tre exempelsidor för olika typer av företag. Klicka på ett
+              exempel för att öppna hela sidan och se hur den fungerar.
+            </p>
+          </div>
+
+          <div className="demo-grid">
+            {demos.map((demo) => (
+              <a
+                className={`demo-card ${demo.className}`}
+                href={demo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Öppna exempelsidan ${demo.name} i ny flik`}
+                key={demo.name}
+              >
+                <div className="demo-screen" aria-hidden="true">
+                  <div className="demo-dots">
                     <span />
                     <span />
                     <span />
-                    <small>{demo.category.toLowerCase()}.site</small>
                   </div>
-                  <div className="preview-content">
-                    <span className="preview-label">{demo.category}</span>
-                    <strong>{demo.name}</strong>
-                    <span className="preview-line" />
-                    <span className="preview-line preview-line-short" />
-                    <span className="preview-cta">DISCOVER MORE ↗</span>
-                  </div>
+                  <div className="demo-name">{demo.name}</div>
                 </div>
-                <span className="preview-number">{demo.number}</span>
-                <span className="preview-open">View demo ↗</span>
-              </div>
-
-              <div className="demo-info">
-                <div>
+                <div className="demo-info">
+                  <span className="demo-tag">Exempel: {demo.type}</span>
                   <h3>{demo.name}</h3>
                   <p>{demo.description}</p>
+                  <span className="demo-link">Öppna exempelsidan</span>
                 </div>
-                <span className="demo-arrow" aria-hidden="true">↗</span>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <p className="demo-disclaimer">
-          These are illustrative design concepts, not client projects.
-        </p>
-      </section>
-
-      <section className="approach-section" id="approach">
-        <div className="approach-heading">
-          <p className="eyebrow">THE NORDVEKS APPROACH</p>
-          <h2>
-            Good design.
-            <br />
-            <span>Without the unnecessary.</span>
-          </h2>
-        </div>
-
-        <div className="approach-points">
-          <article>
-            <span>01</span>
-            <h3>Designed for you</h3>
-            <p>
-              A website shaped around your business, your customers, and your
-              goals — not a generic one-size-fits-all template.
-            </p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Clear from the start</h3>
-            <p>
-              We discuss the scope, pricing, domain, and ongoing costs before
-              work begins, so you know what to expect.
-            </p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>A real person to contact</h3>
-            <p>
-              You work directly with the person designing and building your
-              website. No self-service platform to figure out.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="process-section" id="process">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">STRAIGHTFORWARD BY DESIGN</p>
-            <h2>From first chat to launch<span>.</span></h2>
+              </a>
+            ))}
           </div>
-          <p className="section-aside">
-            Every project starts with a conversation,
-            not a checkout page.
+
+          <p className="demo-note">
+            Det här är exempel och inte riktiga kunder. Din hemsida utformas helt
+            efter ditt företag.
           </p>
         </div>
+      </section>
 
-        <div className="process-grid">
-          {process.map((step) => (
-            <article className="process-card" key={step.number}>
-              <span className="process-number">{step.number}</span>
-              <div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            </article>
-          ))}
+      <section className="section section--tint" id="pris">
+        <div className="container">
+          <div className="section-head">
+            <h2>Ett fast pris för en komplett hemsida</h2>
+            <p>Du vet vad det kostar innan vi börjar.</p>
+          </div>
+
+          <div className="offer">
+            <ul className="offer-list">
+              {included.map((item) => (
+                <li key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ul>
+
+            <div className="price-panel">
+              <p className="price-label">Komplett hemsida</p>
+              <p className="price">Från 1 290 kr</p>
+              <p className="price-note">
+                Engångskostnad för bygget. Omfattning och pris bestäms innan vi
+                börjar.
+              </p>
+              <a className="button button-primary" href={CONTACT_HREF}>
+                Kom igång
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="contact-section" id="contact">
-        <div className="contact-topline">
-          <span className="eyebrow">HAVE A BUSINESS TO BUILD?</span>
-          <span className="contact-index">LET'S MAKE IT HAPPEN ↙</span>
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <h2>Det enklaste sättet att få en hemsida</h2>
+            <p>
+              Så här skiljer sig Nordveks från de vanligaste alternativen.
+            </p>
+          </div>
+
+          <div className="compare-wrap">
+            <table className="compare">
+              <thead>
+                <tr>
+                  <td />
+                  <th scope="col" className="compare-us">
+                    Nordveks
+                  </th>
+                  <th scope="col">Webbyrå</th>
+                  <th scope="col">Bygga själv</th>
+                </tr>
+              </thead>
+              <tbody>
+                {compareRows.map((row) => (
+                  <tr key={row.label}>
+                    <th scope="row">{row.label}</th>
+                    <td className="compare-us">{row.us}</td>
+                    <td>{row.agency}</td>
+                    <td>{row.diy}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="demo-note">
+            Jämförelsen bygger på vanliga förhållanden. Pris och tid varierar
+            mellan leverantörer.
+          </p>
         </div>
-
-        <h2>
-          Let's make your
-          <br />
-          <span>next first impression.</span>
-        </h2>
-
-        <p>
-          Tell me a little about your business and what you're looking for.
-          We'll take it from there.
-        </p>
-
-        <a
-          className="button button-light"
-          href="mailto:hello@nordveks.se?subject=Website%20enquiry"
-        >
-          Get in touch <span aria-hidden="true">↗</span>
-        </a>
-
-        <span className="contact-small">
-          No commitment. Just a conversation.
-        </span>
       </section>
 
-      <footer className="site-footer">
-        <a className="wordmark footer-wordmark" href="#home">
-          nordveks<span>.</span>
-        </a>
-        <span>Independent web design · Gothenburg, Sweden</span>
-        <a href="#home">Back to top ↑</a>
-        <span className="footer-year">
-          © {new Date().getFullYear()} Nordveks
-        </span>
-      </footer>
+      <section className="cta" id="kontakt">
+        <div className="container">
+          <div className="cta-inner">
+            <h2>Redo att komma igång?</h2>
+            <p>
+              Berätta kort om ditt företag och vad du söker, så hör vi av oss.
+            </p>
+            <a className="button button-light" href={CONTACT_HREF}>
+              Kom igång
+            </a>
+            <p className="cta-small">
+              Ingen förpliktelse, hör av dig så hittar vi en lösning som passar ditt företag. Du kan mejla{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <SiteFooter />
     </main>
   );
 }

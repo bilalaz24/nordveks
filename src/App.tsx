@@ -2,6 +2,8 @@
 import LandingPage from "./pages/LandingPage";
 import BusinessWebsite from "./BusinessWebsite";
 import { resolveCustomer, ROOT_DOMAIN } from "./resolveCustomer";
+import NotFoundPage from "./pages/NotFoundPage";
+import SiteMetadata from "./components/SiteMetadata";
 
 function App() {
   const hostname = window.location.hostname.toLowerCase();
@@ -25,24 +27,15 @@ function App() {
   const customer = resolveCustomer(hostname, pathname);
 
   if (customer) {
-    return <BusinessWebsite config={customer} />;
+    return (
+      <div>
+        <BusinessWebsite config={customer} />
+        <SiteMetadata />
+      </div>
+    );
   }
 
-  return (
-    <main
-      style={{
-        minHeight: "100vh",
-        padding: "48px 7%",
-        background: "#f5f3ec",
-        color: "#20271f",
-        fontFamily: "sans-serif",
-      }}
-    >
-      <h1>Website not found</h1>
-      <p>We couldn't find a website at this address.</p>
-      <a href="/">Back to Nordveks</a>
-    </main>
-  );
+  return <NotFoundPage />;
 }
 
 export default App;

@@ -1,0 +1,35 @@
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: 100%;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.logo__image {
+  display: block;
+  width: 145px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Smaller logo when used in a footer */
+.logo--footer .logo__image {
+  width: 120px;
+}
+
+/* Compact header logo on mobile */
+@media (max-width: 650px) {
+  .logo__image {
+    width: 125px;
+  }
+
+  .logo--footer .logo__image {
+    width: 110px;
+  }
+}

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" >
+  <defs>
+    <!-- Left Navy Gradient -->
+    <linearGradient id="navy-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#243343" />
+      <stop offset="100%" stop-color="#1c2633" />
+    </linearGradient>
+
+    <!-- Middle Teal Gradient -->
+    <linearGradient id="teal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b616e" />
+      <stop offset="50%" stop-color="#3d8391" />
+      <stop offset="100%" stop-color="#2d6774" />
+    </linearGradient>a
+
+    <!-- Right Cyan Gradient -->
+    <linearGradient id="cyan-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4d9ea2" />
+      <stop offset="100%" stop-color="#6cc2c5" />
+    </linearGradient>
+  </defs>
+
+  <!-- White background -->
+  <rect x="0" y="0" width="1000" height="1000" fill="#ffffff" />
+
+  <!-- 2. Middle Diagonal Teal Rectangle (Starts at Top-Left and Overlaps Navy Bar) -->
+  <polygon points="60,200 260,160 718,808 500,840" fill="url(#teal-grad)" />
+
+  <!-- 1. Left Vertical Navy Rectangle -->
+  <rect x="60" y="160" width="200" height="680" fill="url(#navy-grad)" />
+
+  <!-- 3. Right Diagonal Cyan Rectangle (Overlaps Middle Teal Bar at Bottom) -->
+  <polygon points="500,840 712,840 952,160 740,160" fill="url(#cyan-grad)" />
+</svg>

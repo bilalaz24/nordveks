@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import "./BusinessWebsite.css";
 import type { CSSProperties } from "react";
@@ -16,7 +15,7 @@ function BusinessWebsite({ config }: Props) {
   const isRestaurant =
     config.category === "RESTAURANT" || config.slug === "restaurant";
 
-  const offeringsName = isRestaurant ? "the menu" : "our services";
+  const offeringsName = isRestaurant ? "menyn" : "våra tjänster";
 
   useEffect(() => {
     const root = siteRef.current;
@@ -32,7 +31,7 @@ function BusinessWebsite({ config }: Props) {
 
     let observer: IntersectionObserver | undefined;
 
-    // Progressive enhancement: no hidden content unless animation is supported.
+    // Progressiv förbättring: dölj inget innehåll om animering inte stöds.
     if (!reduceMotion && "IntersectionObserver" in window) {
       root.classList.add("biz-motion-ready");
 
@@ -56,7 +55,7 @@ function BusinessWebsite({ config }: Props) {
       revealItems.forEach((item) => item.classList.add("is-visible"));
     }
 
-    // Parallax elements move in response to their position in the viewport.
+    // Parallax-element rör sig beroende på sin position i visningsfönstret.
     const parallaxItems = reduceMotion
       ? []
       : Array.from(root.querySelectorAll<HTMLElement>("[data-parallax]"));
@@ -72,7 +71,7 @@ function BusinessWebsite({ config }: Props) {
       parallaxItems.forEach((element) => {
         const rect = element.getBoundingClientRect();
 
-        // Avoid unnecessary work for elements far outside the viewport.
+        // Undvik onödigt arbete för element långt utanför visningsfönstret.
         if (rect.bottom < -100 || rect.top > viewportHeight + 100) {
           return;
         }
@@ -147,7 +146,7 @@ function BusinessWebsite({ config }: Props) {
             <div className="biz-intro-inner">
               <p className="biz-eyebrow">
                 <span className="biz-eyebrow-line" aria-hidden="true" />
-                A little about us
+                Lite om oss
               </p>
 
               <h2>
@@ -190,15 +189,15 @@ function BusinessWebsite({ config }: Props) {
               <p className="biz-section-aside">
                 {isRestaurant ? (
                   <>
-                    Something to look forward to.
+                    Något att se fram emot.
                     <br />
-                    Something to come back for.
+                    Något att återvända för.
                   </>
                 ) : (
                   <>
-                    Thoughtfully considered.
+                    Genomtänkt in i minsta detalj.
                     <br />
-                    Made personal to you.
+                    Anpassat efter just dig.
                   </>
                 )}
               </p>
@@ -229,7 +228,9 @@ function BusinessWebsite({ config }: Props) {
             </div>
 
             <a className="biz-section-link" href="#contact">
-              <span>{isRestaurant ? "Plan your visit" : "Let's talk"}</span>
+              <span>
+                {isRestaurant ? "Planera ditt besök" : "Låt oss prata"}
+              </span>
               <span aria-hidden="true">↗</span>
             </a>
           </section>
@@ -248,18 +249,18 @@ function BusinessWebsite({ config }: Props) {
               <div className="biz-section-heading-main">
                 <p className="biz-eyebrow">
                   <span className="biz-eyebrow-line" aria-hidden="true" />
-                  Inside {config.name}
+                  Hos {config.name}
                 </p>
 
                 <h2>
-                  A closer look.
+                  Upptäck mer.
                   <br />
-                  <em>The little things.</em>
+                  <em>De små detaljerna.</em>
                 </h2>
               </div>
 
               <p className="biz-section-aside">
-                A glimpse of the place, the details, and the experience.
+                En glimt av platsen, detaljerna och upplevelsen.
               </p>
             </div>
 
@@ -299,18 +300,18 @@ function BusinessWebsite({ config }: Props) {
               <div className="biz-section-heading-main">
                 <p className="biz-eyebrow">
                   <span className="biz-eyebrow-line" aria-hidden="true" />
-                  Kind words
+                  Vänliga ord
                 </p>
 
                 <h2>
-                  It's better
+                  Upplevelsen blir bättre
                   <br />
-                  <em>when shared.</em>
+                  <em>när den delas.</em>
                 </h2>
               </div>
 
               <p className="biz-section-aside">
-                Experiences told in their own words.
+                Upplevelser berättade med egna ord.
               </p>
             </div>
 
@@ -362,35 +363,35 @@ function BusinessWebsite({ config }: Props) {
             <div className="biz-visit-heading">
               <p className="biz-eyebrow">
                 <span className="biz-eyebrow-line" aria-hidden="true" />
-                Your next step
+                Ditt nästa steg
               </p>
 
               <h2>
                 {isRestaurant ? (
                   <>
-                    Make it
+                    Gör det till
                     <br />
-                    <em>a visit.</em>
+                    <em>ett besök.</em>
                   </>
                 ) : (
                   <>
-                    Good things
+                    Något bra
                     <br />
-                    <em>start here.</em>
+                    <em>börjar här.</em>
                   </>
                 )}
               </h2>
 
               <p className="biz-visit-intro">
                 {isRestaurant
-                  ? `We look forward to welcoming you to ${config.name}.`
-                  : `Get in touch with ${config.name}. We'd love to hear from you.`}
+                  ? `Vi ser fram emot att välkomna dig till ${config.name}.`
+                  : `Kontakta ${config.name}. Vi ser fram emot att höra från dig.`}
               </p>
             </div>
 
             <div className="biz-visit-card">
               <div className="biz-visit-card-heading">
-                <span className="biz-visit-card-label">FIND US</span>
+                <span className="biz-visit-card-label">HITTA HIT</span>
                 <span className="biz-visit-card-icon" aria-hidden="true">
                   ↘
                 </span>
@@ -402,21 +403,21 @@ function BusinessWebsite({ config }: Props) {
 
               <div className="biz-visit-contact-list">
                 <a href={`tel:${config.contact.phone.replace(/\s/g, "")}`}>
-                  <span>Phone</span>
+                  <span>Telefon</span>
                   <span>{config.contact.phone}</span>
                 </a>
 
                 {config.contact.email && (
                   <a href={`mailto:${config.contact.email}`}>
-                    <span>Email</span>
+                    <span>E-post</span>
                     <span>{config.contact.email}</span>
                   </a>
                 )}
               </div>
 
-              <div className="biz-hours" aria-label="Opening hours">
+              <div className="biz-hours" aria-label="Öppettider">
                 <div className="biz-hours-heading">
-                  <span>Opening hours</span>
+                  <span>Öppettider</span>
                   <span className="biz-hours-icon" aria-hidden="true">
                     ◷
                   </span>
@@ -433,10 +434,10 @@ function BusinessWebsite({ config }: Props) {
               <a
                 className="biz-button biz-button-dark biz-visit-button"
                 href={`mailto:${config.contact.email}?subject=${encodeURIComponent(
-                  `Enquiry for ${config.name}`
+                  `Förfrågan till ${config.name}`
                 )}`}
               >
-                <span>Get in touch</span>
+                <span>Kontakta oss</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
@@ -467,25 +468,25 @@ function BusinessWebsite({ config }: Props) {
       }
     >
       <a className="biz-skip-link" href="#main-content">
-        Skip to content
+        Hoppa till innehållet
       </a>
 
       <Navbar
         brand={config.name}
         theme={config.theme}
         links={[
-          { label: "About", href: "#intro" },
+          { label: "Om oss", href: "#intro" },
           {
-            label: isRestaurant ? "Menu" : "Services",
+            label: isRestaurant ? "Meny" : "Tjänster",
             href: "#offerings",
           },
           ...(config.gallery?.length
-            ? [{ label: "Gallery", href: "#gallery" }]
+            ? [{ label: "Galleri", href: "#gallery" }]
             : []),
-          { label: "Visit", href: "#contact" },
+          { label: "Besök oss", href: "#contact" },
         ]}
         contactHref="#contact"
-        contactLabel="Let's talk"
+        contactLabel="Kontakta oss"
       />
 
       <div id="main-content">
@@ -516,14 +517,14 @@ function BusinessWebsite({ config }: Props) {
 
             <div className="biz-hero-actions">
               <a className="biz-button biz-button-primary" href="#offerings">
-                <span>Explore {offeringsName}</span>
+                <span>Upptäck {offeringsName}</span>
                 <span className="biz-button-arrow" aria-hidden="true">
                   ↗
                 </span>
               </a>
 
               <a className="biz-text-link" href="#intro">
-                <span>Meet {config.name}</span>
+                <span>Lär känna {config.name}</span>
                 <span aria-hidden="true">↓</span>
               </a>
             </div>
@@ -566,7 +567,7 @@ function BusinessWebsite({ config }: Props) {
 
               <div>
                 <span className="biz-hero-card-label">
-                  A LITTLE SOMETHING ABOUT US
+                  LITE OM OSS
                 </span>
                 <p>{config.tagline}</p>
               </div>
@@ -581,22 +582,49 @@ function BusinessWebsite({ config }: Props) {
         {config.sections.map(renderSection)}
       </div>
 
-      <footer className="biz-footer">
-        <a className="biz-footer-brand" href="#home">
-          <span>{config.name}</span>
-        </a>
+<footer className="biz-footer">
+  <a className="biz-footer-brand" href="#home">
+    <span>{config.name}</span>
+  </a>
 
-        <p className="biz-footer-meta">
-          {config.category}
-          <span aria-hidden="true"> · </span>
-          {config.location}
-        </p>
+  <div className="biz-footer-meta">
+    <p>
+      {config.category}
+      <span aria-hidden="true"> · </span>
+      {config.location}
+    </p>
 
-        <a className="biz-footer-top" href="#home">
-          <span>Back to top</span>
-          <span aria-hidden="true">↑</span>
-        </a>
-      </footer>
+    <address>
+      {config.contact.address}
+    </address>
+
+    {config.contact.email && (
+      <a href={`mailto:${config.contact.email}`}>
+        {config.contact.email}
+      </a>
+    )}
+  </div>
+
+  <div className="biz-footer-bottom">
+    <a
+      className="biz-footer-top"
+      href="#home"
+    >
+      <span>Tillbaka till toppen</span>
+      <span aria-hidden="true">↑</span>
+    </a>
+
+    <a
+      className="biz-footer-credit"
+      href="https://nordveks.se"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Drivs med <span>Nordveks</span>
+    </a>
+  </div>
+</footer>
+ 
     </main>
   );
 }

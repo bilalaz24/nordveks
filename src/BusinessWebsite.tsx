@@ -757,7 +757,7 @@ function BusinessWebsite({ config }: Props) {
           letterSpacing: "-0.3px",
         }}
       >
-        nordveks<span style={{ color: "#b9d3a5" }}>.</span>
+        Nordveks
       </span>
     </a>
   </div>

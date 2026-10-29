@@ -582,48 +582,187 @@ function BusinessWebsite({ config }: Props) {
         {config.sections.map(renderSection)}
       </div>
 
-<footer className="biz-footer">
-  <a className="biz-footer-brand" href="#home">
-    <span>{config.name}</span>
-  </a>
-
-  <div className="biz-footer-meta">
-    <p>
-      {config.category}
-      <span aria-hidden="true"> · </span>
-      {config.location}
-    </p>
-
-    <address>
-      {config.contact.address}
-    </address>
-
-    {config.contact.email && (
-      <a href={`mailto:${config.contact.email}`}>
-        {config.contact.email}
+<footer
+  style={{
+    background: "#151a18",
+    color: "#f4f3ed",
+    padding: "64px 7% 24px",
+    marginTop: "80px",
+    fontFamily: "inherit",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "flex-start",
+      gap: "40px",
+      flexWrap: "wrap",
+      paddingBottom: "48px",
+    }}
+  >
+    {/* Brand */}
+    <div style={{ flex: "1 1 240px", maxWidth: "360px" }}>
+      <a
+        href="#home"
+        style={{
+          color: "inherit",
+          textDecoration: "none",
+          fontSize: "clamp(24px, 3vw, 32px)",
+          fontWeight: 650,
+          letterSpacing: "-1.2px",
+          lineHeight: 1.2,
+        }}
+      >
+        {config.name}
       </a>
-    )}
+
+      <p
+        style={{
+          color: "#a7ada7",
+          fontSize: "14px",
+          lineHeight: 1.8,
+          margin: "16px 0 0",
+          maxWidth: "300px",
+        }}
+      >
+        {config.category} i {config.location}.
+        <br />
+        Välkommen att besöka oss.
+      </p>
+    </div>
+
+    {/* Contact */}
+    <div style={{ flex: "1 1 220px" }}>
+      <p
+        style={{
+          color: "#a7ada7",
+          fontSize: "11px",
+          fontWeight: 700,
+          letterSpacing: "2px",
+          textTransform: "uppercase",
+          margin: "5px 0 22px",
+        }}
+      >
+        Kontakt
+      </p>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: "14px",
+          fontSize: "14px",
+          lineHeight: 1.7,
+        }}
+      >
+        {config.contact.address && (
+          <div style={{ display: "flex", gap: "12px" }}>
+            <span style={{ color: "#b9d3a5" }}>↗</span>
+            <address
+              style={{
+                fontStyle: "normal",
+                color: "#e0e2dc",
+              }}
+            >
+              {config.contact.address}
+            </address>
+          </div>
+        )}
+
+        {config.contact.email && (
+          <a
+            href={`mailto:${config.contact.email}`}
+            style={{
+              display: "flex",
+              gap: "12px",
+              color: "#e0e2dc",
+              textDecoration: "none",
+              overflowWrap: "anywhere",
+              transition: "color 180ms ease",
+            }}
+          >
+            <span style={{ color: "#b9d3a5" }}>↗</span>
+            {config.contact.email}
+          </a>
+        )}
+      </div>
+    </div>
+
+    {/* Back to top */}
+    <div style={{ flex: "0 1 160px" }}>
+      <a
+        href="#home"
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "12px",
+          color: "#f4f3ed",
+          textDecoration: "none",
+          fontSize: "13px",
+          fontWeight: 500,
+          border: "1px solid #424843",
+          borderRadius: "100px",
+          padding: "12px 18px",
+          transition: "background 180ms ease",
+        }}
+      >
+        Till toppen
+        <span style={{ fontSize: "17px" }}>↑</span>
+      </a>
+    </div>
   </div>
 
-  <div className="biz-footer-bottom">
-    <a
-      className="biz-footer-top"
-      href="#home"
+  {/* Bottom bar */}
+  <div
+    style={{
+      borderTop: "1px solid #343a35",
+      paddingTop: "22px",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      flexWrap: "wrap",
+      gap: "16px",
+    }}
+  >
+    <span
+      style={{
+        color: "#858d85",
+        fontSize: "12px",
+      }}
     >
-      <span>Tillbaka till toppen</span>
-      <span aria-hidden="true">↑</span>
-    </a>
+      © {new Date().getFullYear()} {config.name}
+    </span>
 
     <a
-      className="biz-footer-credit"
       href="https://nordveks.se"
       target="_blank"
       rel="noopener noreferrer"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "7px",
+        color: "#a7ada7",
+        fontSize: "12px",
+        textDecoration: "none",
+        letterSpacing: "0.2px",
+      }}
     >
-      Drivs med <span>Nordveks</span>
+      En webbplats från
+      <span
+        style={{
+          color: "#f4f3ed",
+          fontWeight: 700,
+          letterSpacing: "-0.3px",
+        }}
+      >
+        nordveks<span style={{ color: "#b9d3a5" }}>.</span>
+      </span>
     </a>
   </div>
 </footer>
+
  
     </main>
   );

@@ -288,4 +288,178 @@ export const customers: Record<string, CustomerConfig> = {
 
     sections: ["intro", "offerings", "visit"],
   },
+
+  
+  gaetanos_demo: {
+    slug: "gaetanos",
+    faviconUrl: "/favicons/gaetanos.svg",
+
+    name: "GAETANOS",
+    category: "PIZZERIA ITALIANA",
+    location: "LINNÉ, GÖTEBORG",
+    tagline: "Linnés lilla Italien · Sveagatan 16",
+
+    heroTitle: "Pizzan är papperstunn.",
+    heroEmphasis: "Personligheten är stor.",
+    heroDescription:
+      "På Sveagatan 16 i Linné serverar Gaetano pizzor med " +
+      "riktigt tunn, frasig botten och italienska smakkombinationer. " +
+      "Prova Pizza Italia med kryddig salami och ansjovis, husets " +
+      "egen Gaetanos med pancetta och Gorgonzola – och spara plats " +
+      "för tiramisu med hemliga ingredienser. " +
+      "9,8/10 på TheFork, baserat på 258 gästomdömen.",
+
+    heroImage:
+      "https://cdn.thefork.com/tf-lab/image/upload/w_1080%2Cc_fill%2Cq_auto%2Cf_auto/restaurant/5b33f763-cd99-4234-a5fb-f8c9f7cf5a81/e7b15304-7f86-4d81-9dc7-fee858619978.jpg",
+
+    aboutTitle: "Välkommen till",
+    aboutEmphasis: "Gaetanos bord.",
+
+    aboutDescription:
+      "En liten, familjeägd restaurang i Linné med en tydlig " +
+      "passion för italiensk pizza. Här handlar det om den tunna, " +
+      "frasiga bottnen, klassiska italienska ingredienser och " +
+      "ett personligt bemötande. Börja gärna med något litet, " +
+      "hitta din favorit bland pizzorna och avsluta med husets " +
+      "tiramisu – receptet på de hemliga ingredienserna behåller vi för oss själva. " +
+      "När vädret tillåter finns även uteservering längs Sveagatan.",
+
+    offeringsTitle: "Välkända favoriter.",
+    offeringsEmphasis: "Gaetanos stil.",
+    offeringsLabel: "DAL MENÙ · MENYN",
+
+    offerings: [
+      {
+        name: "Pizza Italia",
+        description:
+          "Tomatsås, mozzarella, kryddig salami, ansjovis, " +
+          "parmesan, vitlök och oregano.",
+        price: "199 kr",
+      },
+      {
+        name: "Pizza Gaetanos",
+        description:
+          "Tomatsås, mozzarella, pancetta, Gorgonzola, " +
+          "oliver, vitlök och oregano.",
+        price: "199 kr",
+      },
+      {
+        name: "Diavola",
+        description:
+          "Tomatsås, mozzarella, kryddig salami, oregano och chili. " +
+          "För dig som gillar lite mer hetta.",
+        price: "189 kr",
+      },
+      {
+        name: "Napoli",
+        description:
+          "Tomatsås, mozzarella, buffelost, körsbärstomater, " +
+          "ruccola och oregano.",
+        price: "189 kr",
+      },
+      {
+        name: "Pesto",
+        description:
+          "Pesto, körsbärstomater, oliver, vitlök, parmesan, " +
+          "ruccola och oregano.",
+        price: "179 kr",
+      },
+      {
+        name: "Noce e Miele",
+        description:
+          "Mozzarella, Gorgonzola, buffelost, valnötter, " +
+          "honung och oregano. En kombination av sälta och sötma.",
+        price: "209 kr",
+      },
+      {
+        name: "Bruschetta",
+        description:
+          "Rostat bröd med hemmagjord bruschetta. " +
+          "En klassisk start på middagen.",
+        price: "79 kr",
+      },
+      {
+        name: "Insalata Gaetanos",
+        description:
+          "Romansallad, lök, Gorgonzola, valnötter, " +
+          "Parmigiano Reggiano och balsamico.",
+        price: "89 kr",
+      },
+      {
+        name: "Homemade Tiramisu",
+        description:
+          "Husets hemlagade tiramisu. En italiensk klassiker " +
+          "med hemliga ingredienser och en fin avslutning på måltiden.",
+        price: "79 kr",
+      },
+    ],
+
+    contact: {
+      email: "",
+      phone: "+46 70 567 45 09",
+      address: "Sveagatan 16, 413 14 Göteborg",
+    },
+
+    hours: [
+      { days: "Måndag–Lördag", time: "17:00–22:00" },
+      { days: "Söndag", time: "12:00–22:00" },
+    ],
+
+    theme: {
+      background: "#191A17",
+      surface: "#F1E9DB",
+      surfaceText: "#282820",
+      text: "#F6F0E6",
+      muted: "#BDB6A7",
+      primary: "#C65B40",
+      primaryText: "#FFFFFF",
+      border: "#FFFFFF24",
+    },
+
+    sections: [
+      "intro",
+      "offerings",
+      "gallery",
+      "testimonials",
+      "visit",
+    ],
+
+    gallery: [
+      {
+        src:
+          "https://cdn.thefork.com/tf-lab/image/upload/w_640%2Cc_fill%2Cq_auto%2Cf_auto/customer/5b33f763-cd99-4234-a5fb-f8c9f7cf5a81/09680791-434b-4eac-a93c-1683ac99cc83.jpg",
+        alt: "Pizzor serverade vid bordet hos Gaetanos Pizza Italiana",
+      },
+      {
+        src:
+          "https://cdn.thefork.com/tf-lab/image/upload/w_500%2Ch_500%2Cc_fill%2Cq_auto%2Cf_jpg/restaurant/5b33f763-cd99-4234-a5fb-f8c9f7cf5a81/fec81705-cbc6-4ce8-903e-c0f71004455c.jpg",
+        alt: "Den intima restaurangmiljön hos Gaetanos",
+      },
+      {
+        src:
+          "https://cdn.thefork.com/tf-lab/image/upload/restaurant/5b33f763-cd99-4234-a5fb-f8c9f7cf5a81/128b60ad-1ff6-4d74-b631-fc324a45c2c6.jpg",
+        alt: "Pizza med italienska råvaror, skinka och ruccola",
+      },
+    ],
+
+    testimonials: [
+      {
+        quote: "Grym personal och jätte goda pizzor 👍🏽👌🏼",
+        name: "Sandra M.",
+        detail: "TheFork · Gästomdöme · 10/10",
+      },
+      {
+        quote: "Mysigt och kändes genuint Italienskt.",
+        name: "Ulf L.",
+        detail: "TheFork · Gästomdöme · 9,5/10",
+      },
+      {
+        quote:
+          "Liten trevlig restaurang, hit kommer jag att gå fler gånger.",
+        name: "Catarina J.",
+        detail: "TheFork · Gästomdöme · 10/10",
+      },
+    ],
+  },
+
 };

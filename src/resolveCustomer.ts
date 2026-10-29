@@ -5,13 +5,21 @@ export const ROOT_DOMAIN = "nordveks.se";
 
 export function resolveCustomer(
   hostname: string,
-  _pathname: string
+  pathname: string
 ) {
   const host = hostname.toLowerCase().split(":")[0];
 
-  // Local development: don't resolve customer sites on localhost.
+  // Local development: resolve customers only under /demo/:subdomain.
   if (host === "localhost" || host === "127.0.0.1") {
-    return null;
+    const match = pathname.match(/^\/demo\/([^/]+)\/?$/);
+
+    if (!match) {
+      return null;
+    }
+
+    const subdomain = match[1].toLowerCase();
+
+    return customers[subdomain] ?? null;
   }
 
   // Don't resolve customer sites on the main domain.

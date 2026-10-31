@@ -463,7 +463,7 @@ export const customers: Record<string, CustomerConfig> = {
   },
 
 
-kortedala-skomakeri_demo: {
+"kortedala-skomakeri_demo": {
   slug: "kortedala-skomakeri",
   faviconUrl: "/favicons/kortedala.svg",
 

@@ -593,7 +593,7 @@ export const customers: Record<string, CustomerConfig> = {
   ],
 },
 
-skomakarn_demo {
+skomakarn_demo: {
   slug: "skomakarn",
   faviconUrl: "/favicons/skomakarn.svg",
 

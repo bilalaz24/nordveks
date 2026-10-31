@@ -463,11 +463,11 @@ export const customers: Record<string, CustomerConfig> = {
   },
 
 
-kortedala_demo: {
-  slug: "kortedala",
+kortedala-skomakeri_demo: {
+  slug: "kortedala-skomakeri",
   faviconUrl: "/favicons/kortedala.svg",
 
-  name: "KORTEDALA",
+  name: "KORTEDALA LÅS & SKOMAKERI",
   category: "LÅS & SKOMAKERI",
   location: "KORTEDALA TORG · GÖTEBORG",
   tagline: "Omsorg om det du redan har.",

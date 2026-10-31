@@ -688,24 +688,11 @@ skomakarn_demo: {
   sections: [
     "intro",
     "offerings",
-    "gallery",
+    "testimonials",
     "visit"
   ],
 
-  gallery: [
-    {
-      src: "/images/skomakarn-workshop.jpg",
-      alt: "Skomakarens arbetsplats och hantverk"
-    },
-    {
-      src: "/images/skomakarn-shoe-repair.jpg",
-      alt: "Skoreparation och omsorg om läderskor"
-    },
-    {
-      src: "/images/skomakarn-leatherwork.jpg",
-      alt: "Detaljarbete med läder och skor"
-    }
-  ],
+ 
 
  testimonials: [
     {

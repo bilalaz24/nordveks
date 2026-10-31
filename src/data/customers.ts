@@ -593,5 +593,118 @@ export const customers: Record<string, CustomerConfig> = {
   ],
 },
 
+skomakarn_demo {
+  slug: "skomakarn",
+  faviconUrl: "/favicons/skomakarn.svg",
+
+  name: "Skomakar’n",
+  category: "SKOMAKERI & SKOVÅRD",
+  location: "NORRA GUBBEROGATAN · GÖTEBORG",
+
+  tagline: "Hantverk som håller längre.",
+
+  heroTitle: "Dina favoritskor",
+  heroEmphasis: "förtjänar ett liv till.",
+  heroDescription:
+    "Ett par välanvända skor behöver inte betyda ett par utslitna skor. Hos Skomakar’n får skor och läderprodukter omsorg genom noggrant hantverk, reparationer och skovård.",
+
+  // Replace with an image supplied or approved by the business.
+  heroImage: "/images/skomakarn-workshop.jpg",
+
+  aboutTitle: "Mer än bara",
+  aboutEmphasis: "en skoreparation.",
+  aboutDescription:
+    "Vissa skor är svåra att ersätta. Kanske är det favoritparet du använt i flera år, bootsen som sitter precis rätt eller skorna du vill kunna bära länge till. Skomakar’n hjälper dig att ta hand om dem med reparationer och skovård som sätter hantverket i centrum. I stället för att direkt köpa nytt kan du ge det du redan tycker om en ny chans.",
+
+  offeringsTitle: "Ge dina skor",
+  offeringsEmphasis: "nytt liv.",
+  offeringsLabel: "VAD VI HJÄLPER DIG MED",
+
+  offerings: [
+    {
+      name: "Skoreparation",
+      description:
+        "För slitna eller skadade skor som behöver lite extra omsorg och ett nytt liv.",
+      price: "Kontakta oss"
+    },
+    {
+      name: "Sulbyte",
+      description:
+        "När sulan gjort sitt hjälper vi dig att förlänga skornas livslängd.",
+      price: "Kontakta oss"
+    },
+    {
+      name: "Klackning",
+      description:
+        "Reparation av slitna klackar för bättre hållbarhet och fortsatt användning.",
+      price: "Kontakta oss"
+    },
+    {
+      name: "Skovård",
+      description:
+        "Omsorg och underhåll som hjälper dina skor att hålla sig fina längre.",
+      price: "Kontakta oss"
+    },
+    {
+      name: "Nyckelservice",
+      description:
+        "Hjälp med nyckelservice som en del av verkstadens utbud.",
+      price: "Kontakta oss"
+    },
+    {
+      name: "Skotillbehör",
+      description:
+        "Tillbehör för dig som vill ta hand om och underhålla dina skor.",
+      price: "Kontakta oss"
+    }
+  ],
+
+  contact: {
+    email: "",
+    phone: "073-912 76 45",
+    address: "Norra Gubberogatan 18, 416 63 Göteborg"
+  },
+
+  hours: [
+    { days: "Måndag–Onsdag", time: "Stängt" },
+    { days: "Torsdag–Fredag", time: "12:00–18:00" },
+    { days: "Lördag", time: "11:00–14:00" },
+    { days: "Söndag", time: "Stängt" }
+  ],
+
+  theme: {
+    background: "#F3EFE8",
+    surface: "#E7DED1",
+    surfaceText: "#29251F",
+    text: "#29251F",
+    muted: "#81776B",
+    primary: "#76513A",
+    primaryText: "#FFFFFF",
+    border: "#D5C9BA"
+  },
+
+  sections: [
+    "intro",
+    "offerings",
+    "gallery",
+    "visit"
+  ],
+
+  gallery: [
+    {
+      src: "/images/skomakarn-workshop.jpg",
+      alt: "Skomakarens arbetsplats och hantverk"
+    },
+    {
+      src: "/images/skomakarn-shoe-repair.jpg",
+      alt: "Skoreparation och omsorg om läderskor"
+    },
+    {
+      src: "/images/skomakarn-leatherwork.jpg",
+      alt: "Detaljarbete med läder och skor"
+    }
+  ]
+},
+
 
 };

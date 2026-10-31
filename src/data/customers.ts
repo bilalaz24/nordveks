@@ -462,4 +462,136 @@ export const customers: Record<string, CustomerConfig> = {
     ],
   },
 
+
+kortedala_demo: {
+  slug: "kortedala",
+  faviconUrl: "/favicons/kortedala.svg",
+
+  name: "KORTEDALA",
+  category: "LÅS & SKOMAKERI",
+  location: "KORTEDALA TORG · GÖTEBORG",
+  tagline: "Omsorg om det du redan har.",
+
+  heroTitle: "Det mesta går",
+  heroEmphasis: "att laga.",
+  heroDescription:
+    "Favoritskorna som behöver lite omsorg. En extra nyckel till hemmet. " +
+    "Eller en klocka som stannat. På Kortedala Torg hittar du " +
+    "Kortedala Lås & Skomakeri – en lokal verkstad för vardagens " +
+    "reparationer och praktiska ärenden.",
+
+  // Published on the official Kortedala Torg business listing.
+  heroImage:
+    "https://www.kortedalatorg.se/wp-content/uploads/2025/01/Skomakare.png",
+
+  aboutTitle: "Ett hantverk värt",
+  aboutEmphasis: "att bevara.",
+
+  aboutDescription:
+    "Alla saker behöver inte ersättas när de börjar bli slitna. " +
+    "Med hjälp av en erfaren skomakare får skor en ny chans, " +
+    "samtidigt som du kan ordna nyckelkopiering och batteribyte " +
+    "av klockor på samma ställe. " +
+    "Här på Kortedala Torg samlas flera användbara tjänster " +
+    "under ett och samma tak. Enkelt, personligt och nära till hands.",
+
+  offeringsTitle: "Från små fix",
+  offeringsEmphasis: "till stora skillnader.",
+  offeringsLabel: "DET HÄR HJÄLPER VI DIG MED",
+
+  offerings: [
+    {
+      name: "Skoreparation",
+      description:
+        "Ge dina favoritskor längre liv. Vi hjälper till med " +
+        "skoreparationer och olika typer av lagningar.",
+      price: "Pris på förfrågan",
+    },
+    {
+      name: "Snabbklackning",
+      description:
+        "Slitna klackar? Vi erbjuder snabbklackning så att " +
+        "du kan fortsätta använda skorna du tycker om.",
+      price: "Pris på förfrågan",
+    },
+    {
+      name: "Nyckelkopiering",
+      description:
+        "Behöver du en extra nyckel? Vi hjälper dig med " +
+        "nyckelkopiering direkt i butiken.",
+      price: "Pris på förfrågan",
+    },
+    {
+      name: "Batteribyte av klockor",
+      description:
+        "När klockan stannar hjälper vi dig med batteribyte.",
+      price: "Pris på förfrågan",
+    },
+    {
+      name: "Kemtvätt",
+      description:
+        "Lämna in dina kläder och mattor för kemtvätt. " +
+        "En smidig tjänst när textilierna behöver lite extra omsorg.",
+      price: "Pris på förfrågan",
+    },
+  ],
+
+  contact: {
+    email: "",
+    phone: "+46 31 46 64 95",
+    address: "Kortedala Torg 4, 415 36 Göteborg",
+  },
+
+  hours: [
+    {
+      days: "Måndag–Fredag",
+      time: "10:00–18:00",
+    },
+    {
+      days: "Lördag",
+      time: "10:00–15:00",
+    },
+    {
+      days: "Söndag",
+      time: "Stängt",
+    },
+  ],
+
+  theme: {
+    background: "#22231F",
+    surface: "#E8E0D2",
+    surfaceText: "#302E28",
+    text: "#F1EDE4",
+    muted: "#B9B4A8",
+    primary: "#B58259",
+    primaryText: "#211F1B",
+    border: "#FFFFFF20",
+  },
+
+  sections: [
+    "intro",
+    "offerings",
+    "testimonials",
+    "visit",
+  ],
+
+  testimonials: [
+    {
+      quote:
+        "En riktig hantverkare.",
+      name: "Kundomdöme",
+      detail:
+        "Publikt kundomdöme · återkommande kund",
+    },
+    {
+      quote:
+        "Mycket nöjd.",
+      name: "Kundomdöme",
+      detail:
+        "Publikt kundomdöme · skoreparation",
+    },
+  ],
+},
+
+
 };

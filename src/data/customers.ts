@@ -609,7 +609,9 @@ skomakarn_demo: {
     "Ett par välanvända skor behöver inte betyda ett par utslitna skor. Hos Skomakar’n får skor och läderprodukter omsorg genom noggrant hantverk, reparationer och skovård.",
 
   // Replace with an image supplied or approved by the business.
-  heroImage: "/images/skomakarn-workshop.jpg",
+  heroImage:
+      "https://images.unsplash.com/photo-1614252232844-fd2081543310?auto=format&fit=crop&w=1400&q=85",
+  
 
   aboutTitle: "Mer än bara",
   aboutEmphasis: "en skoreparation.",
@@ -702,6 +704,27 @@ skomakarn_demo: {
     {
       src: "/images/skomakarn-leatherwork.jpg",
       alt: "Detaljarbete med läder och skor"
+    }
+  ],
+
+ testimonials: [
+    {
+      quote:
+        "Riktigt trevligt och professionellt bemötande! Tog honom blott en minut att banka bort skoskavet från mina skor – rekommenderar starkt!",
+      name: "Natanael",
+      detail: "Google-recension · 1 september 2025"
+    },
+    {
+      quote:
+        "Gubben på Norra Gubberogatan 18 gör ett riktigt bra jobb, prisvärt också! Vet att han löst saker som andra gått bet på. Han syr även annat i skinn om man har ngt trasigt.",
+      name: "Reddit-användare",
+      detail: "r/Gothenburg · 11 augusti 2024"
+    },
+    {
+      quote:
+        "Har fått allt från skor till väskor lagade här sen jag var liten! Rekommenderar varmt!",
+      name: "Reddit-användare",
+      detail: "r/Gothenburg · 11 augusti 2024"
     }
   ]
 },
